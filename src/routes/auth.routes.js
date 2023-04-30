@@ -7,7 +7,7 @@ const authRouter = Router();
 
 authRouter.post('/login', validateSchema(signInSchema), signin)
 
-authRouter.post('/register', validateSchema(signUpSchema), signup)
+authRouter.post('/register', signup)
 
 authRouter.post('/password-reset',)
 
