@@ -21,3 +21,15 @@ export async function getStock(req, res) {
     res.status(500).send(err);
   }
 }
+
+
+export async function cart(req, res){
+  const {name, price, picture} = req.body
+
+  try{
+    const cartProduct = await db.collection("cart").insertOne({name, price, picture});
+    res.status(201).send("Created!");
+  }catch (err){
+    res.sendStatus(500);
+  }
+}
